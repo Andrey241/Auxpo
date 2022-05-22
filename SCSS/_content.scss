@@ -1,0 +1,14 @@
+body {
+  background: linear-gradient(108.76deg, #343131 -1.39%, #1d1919 102.08%);
+  height: 100vh;
+}
+html {
+  height: 100vh;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  grid-template-rows: 98px 1fr;
+  height: 100%;
+}
