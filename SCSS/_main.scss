@@ -1,6 +1,7 @@
 .content-main {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
+  margin-top: 10px;
 }
 .swiper {
   position: relative;
@@ -13,7 +14,7 @@
 .swiper-pagination-vertical.swiper-pagination-bullets,
 .swiper-vertical > .swiper-pagination-bullets {
   right: inherit;
-  top: 180px;
+  top: 150px;
   left: 60px;
   position: absolute;
   width: 203px;
@@ -29,13 +30,27 @@
   font-size: 25px;
   font-weight: 800;
   font-family: $Catamaran;
+  line-height: 1.1;
   &:not(:last-child) {
-    margin-bottom: 44px !important;
+    margin-bottom: 23px !important;
   }
   & span {
     display: block;
     font-weight: 600;
     font-size: 17px;
+  }
+}
+.pagination-art {
+  position: relative;
+  &::before {
+    content: "";
+    background: url(../Images/line-white.svg) left center/cover no-repeat;
+    background-size: 203px 2px;
+    width: 203px;
+    height: 2px;
+    display: block;
+    left: 0;
+    bottom: 15px;
   }
 }
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
@@ -50,6 +65,118 @@
 }
 .swiper-body {
   margin-left: 50%;
+  &__title {
+    font-size: 45px;
+    font-family: $Caudex;
+    font-weight: 700;
+    line-height: 1.2;
+    & span {
+      position: relative;
+      &::before,
+      &::after {
+        content: "3D printed";
+        position: absolute;
+        z-index: -1;
+      }
+      &::before {
+        left: -4px;
+        color: #fb258b;
+      }
+      &::after {
+        bottom: 2px;
+        left: 4px;
+        color: #5025fb;
+        width: 100%;
+      }
+    }
+  }
+  &__desc {
+    font-family: $Catamaran;
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0.065em;
+    color: #bcbcbc;
+    line-height: 1.4;
+    margin: 30px 0 47px;
+  }
+  &__buttons {
+    display: flex;
+    align-items: center;
+  }
+  &__btn {
+    font-family: $Orbitron;
+    font-weight: 700;
+    font-size: 18px;
+    color: #252525;
+    background-color: white;
+  }
+  &__buy {
+    padding: 9px 20px;
+    position: relative;
+    margin-right: 30px;
+    box-shadow: 0 0 0 4.5px rgba(255, 255, 255, 0);
+    transition: all 0.3s ease-in;
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    &::after {
+      background-color: #fb258b;
+      left: -4px;
+      top: -4.5px;
+    }
+    &::before {
+      background-color: #5025fb;
+      bottom: -4.5px;
+      right: -4.5px;
+    }
+    &:hover {
+      box-shadow: 0 0 0 4.5px #fff;
+    }
+    &:hover::after,
+    &:hover::before {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+  &__view {
+    font-weight: 500;
+    font-size: 16px;
+    color: #ffffff;
+    background: transparent;
+    border: 1px solid white;
+    padding: 14px 21px 14px 56px;
+    position: relative;
+    transition: all 0.3s ease;
+    &::after {
+      position: absolute;
+      content: "";
+      background: url("../Images/eye.svg") center center/cover no-repeat;
+      background-size: 24px 18px;
+      width: 24px;
+      height: 18px;
+      display: block;
+      left: 20px;
+      top: calc(50% - 9px);
+      transition: all 0.3s ease;
+    }
+    &:hover {
+      background-color: #fff;
+      color: #252525;
+    }
+    &:hover::after {
+      background: url("../Images/eye-black.svg") center center/cover no-repeat;
+      background-size: 24px 18px;
+      width: 24px;
+      height: 18px;
+    }
+  }
 }
 .swiper-footer {
   position: absolute;

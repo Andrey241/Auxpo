@@ -154,9 +154,9 @@ a {
   position: relative;
   width: 100%;
   height: 98px;
-  -webkit-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .content-sidebar__button::after {
@@ -167,12 +167,13 @@ a {
   background-size: cover;
   width: 24px;
   height: 24px;
+  z-index: -1;
   top: calc(50% - 13px);
   left: calc(50% - 13px);
   opacity: 0.05;
-  -webkit-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .content-sidebar__button::before {
@@ -186,9 +187,10 @@ a {
   top: calc(50% - 11px);
   left: calc(50% - 11px);
   opacity: 0.05;
-  -webkit-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
+  z-index: -1;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .content-sidebar__button:hover {
@@ -198,7 +200,7 @@ a {
 }
 
 .content-sidebar__button:hover::before, .content-sidebar__button:hover::after {
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .content-sidebar__list {
@@ -237,6 +239,7 @@ a {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2 / 3;
+  margin-top: 10px;
 }
 
 .swiper {
@@ -251,7 +254,7 @@ a {
 .swiper-pagination-vertical.swiper-pagination-bullets,
 .swiper-vertical > .swiper-pagination-bullets {
   right: inherit;
-  top: 180px;
+  top: 150px;
   left: 60px;
   position: absolute;
   width: 203px;
@@ -268,16 +271,32 @@ a {
   font-size: 25px;
   font-weight: 800;
   font-family: "Catamaran", sans-serif;
+  line-height: 1.1;
 }
 
 .swiper-pagination-bullet:not(:last-child) {
-  margin-bottom: 44px !important;
+  margin-bottom: 23px !important;
 }
 
 .swiper-pagination-bullet span {
   display: block;
   font-weight: 600;
   font-size: 17px;
+}
+
+.pagination-art {
+  position: relative;
+}
+
+.pagination-art::before {
+  content: "";
+  background: url(../Images/line-white.svg) left center/cover no-repeat;
+  background-size: 203px 2px;
+  width: 203px;
+  height: 2px;
+  display: block;
+  left: 0;
+  bottom: 15px;
 }
 
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
@@ -294,6 +313,145 @@ a {
 
 .swiper-body {
   margin-left: 50%;
+}
+
+.swiper-body__title {
+  font-size: 45px;
+  font-family: "Caudex", serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.swiper-body__title span {
+  position: relative;
+}
+
+.swiper-body__title span::before, .swiper-body__title span::after {
+  content: "3D printed";
+  position: absolute;
+  z-index: -1;
+}
+
+.swiper-body__title span::before {
+  left: -4px;
+  color: #fb258b;
+}
+
+.swiper-body__title span::after {
+  bottom: 2px;
+  left: 4px;
+  color: #5025fb;
+  width: 100%;
+}
+
+.swiper-body__desc {
+  font-family: "Catamaran", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 0.065em;
+  color: #bcbcbc;
+  line-height: 1.4;
+  margin: 30px 0 47px;
+}
+
+.swiper-body__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.swiper-body__btn {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #252525;
+  background-color: white;
+}
+
+.swiper-body__buy {
+  padding: 9px 20px;
+  position: relative;
+  margin-right: 30px;
+  -webkit-box-shadow: 0 0 0 4.5px rgba(255, 255, 255, 0);
+          box-shadow: 0 0 0 4.5px rgba(255, 255, 255, 0);
+  -webkit-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.swiper-body__buy::after, .swiper-body__buy::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.swiper-body__buy::after {
+  background-color: #fb258b;
+  left: -4px;
+  top: -4.5px;
+}
+
+.swiper-body__buy::before {
+  background-color: #5025fb;
+  bottom: -4.5px;
+  right: -4.5px;
+}
+
+.swiper-body__buy:hover {
+  -webkit-box-shadow: 0 0 0 4.5px #fff;
+          box-shadow: 0 0 0 4.5px #fff;
+}
+
+.swiper-body__buy:hover::after, .swiper-body__buy:hover::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.swiper-body__view {
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid white;
+  padding: 14px 21px 14px 56px;
+  position: relative;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.swiper-body__view::after {
+  position: absolute;
+  content: "";
+  background: url("../Images/eye.svg") center center/cover no-repeat;
+  background-size: 24px 18px;
+  width: 24px;
+  height: 18px;
+  display: block;
+  left: 20px;
+  top: calc(50% - 9px);
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.swiper-body__view:hover {
+  background-color: #fff;
+  color: #252525;
+}
+
+.swiper-body__view:hover::after {
+  background: url("../Images/eye-black.svg") center center/cover no-repeat;
+  background-size: 24px 18px;
+  width: 24px;
+  height: 18px;
 }
 
 .swiper-footer {
