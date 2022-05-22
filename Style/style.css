@@ -250,15 +250,12 @@ a {
 .swiper-pagination-vertical.swiper-pagination-bullets,
 .swiper-vertical > .swiper-pagination-bullets {
   right: inherit;
+  top: 180px;
   left: 60px;
   position: absolute;
   width: 203px;
   -ms-flex-preferred-size: 203px;
       flex-basis: 203px;
-}
-
-.swiper-pagination-bullet-active {
-  background: transparent;
 }
 
 .swiper-pagination-bullet {
@@ -267,10 +264,31 @@ a {
   color: white;
   width: inherit;
   text-align: left;
+  font-size: 25px;
+  font-weight: 800;
+  font-family: "Catamaran", sans-serif;
+}
+
+.swiper-pagination-bullet:not(:last-child) {
+  margin-bottom: 44px !important;
 }
 
 .swiper-pagination-bullet span {
   display: block;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: transparent;
+  font-size: 34px;
+  font-family: "Catamaran", sans-serif;
+  font-weight: 800;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active span {
+  font-size: 22px;
+  font-weight: 600;
 }
 
 .swiper-body {
@@ -289,6 +307,15 @@ a {
   background: linear-gradient(270deg, rgba(66, 66, 66, 0.49) 0%, rgba(66, 66, 66, 0.4753) 76.04%, rgba(66, 66, 66, 0) 100%);
   -webkit-backdrop-filter: blur(47.2917px);
           backdrop-filter: blur(47.2917px);
+}
+
+.pagination-price {
+  display: inline;
+}
+
+.pagination-price span {
+  font-family: "Orbitron", sans-serif;
+  display: inline;
 }
 
 .content-header {

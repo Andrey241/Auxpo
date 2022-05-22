@@ -4,9 +4,14 @@ const price = ["221", "157", "95"];
 const classForPirce = ["price-caesar", "price-abyss", "price-discobolous"];
 
 var swiper = new Swiper(".main-swiper", {
+  effect: "fade",
+  fadeEffect: {
+    crossFade: true,
+  },
   direction: "vertical",
   slidesPerView: 1,
   spaceBetween: 30,
+
   mousewheel: true,
   pagination: {
     el: ".swiper-pagination",
@@ -23,7 +28,7 @@ var swiper = new Swiper(".main-swiper", {
         "</span>" +
         "<span class='pagination-price'>" +
         // `<span class='pagination-price ${classForPirce[index]}'>` +
-        (price[index] + " " + "ETH") +
+        ("<span>" + price[index] + "</span>" + " " + "ETH") +
         "</span>" +
         "</p>"
       );
