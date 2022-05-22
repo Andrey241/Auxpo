@@ -53,6 +53,7 @@
 }
 .swiper-footer {
   position: absolute;
+  height: 225px;
   bottom: 0;
   left: 0;
   right: 0;
@@ -64,6 +65,56 @@
     rgba(66, 66, 66, 0) 100%
   );
   backdrop-filter: blur(47.2917px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.swiper-info {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto 1fr;
+  gap: 5%;
+  width: calc(100% - 360px);
+  padding-left: 60px;
+  &__author {
+    grid-column: 1/6;
+    grid-row: 1/2;
+    font-family: $Caudex;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 41px 0 26px;
+  }
+  &__item {
+    grid-row: 2/3;
+    font-family: $Orbitron;
+    font-size: 17px;
+    font-weight: 700;
+    & span {
+      display: block;
+      font-family: $Catamaran;
+      font-weight: 500;
+      font-size: 17px;
+      color: #bcbcbc;
+      margin-top: 10px;
+    }
+  }
+}
+
+.swiper-cover {
+  width: 225px;
+  height: 225px;
+  position: relative;
+  overflow: hidden;
+  &__img {
+    width: 225px;
+    height: 225px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+  }
 }
 
 .pagination-price {
