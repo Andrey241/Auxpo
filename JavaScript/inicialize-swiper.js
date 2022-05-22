@@ -1,6 +1,7 @@
 const count = ["1", "2", "3"];
 const art = ["Julius Caesar", "Into the Abyss ", "Discobolous"];
 const price = ["221", "157", "95"];
+const classForPirce = ["price-caesar", "price-abyss", "price-discobolous"];
 
 var swiper = new Swiper(".main-swiper", {
   direction: "vertical",
@@ -21,10 +22,14 @@ var swiper = new Swiper(".main-swiper", {
         art[index] +
         "</span>" +
         "<span class='pagination-price'>" +
-        ("<span>" + price[index] + "</span>" + " " + "ETH") +
+        // `<span class='pagination-price ${classForPirce[index]}'>` +
+        (price[index] + " " + "ETH") +
         "</span>" +
         "</p>"
       );
     },
   },
 });
+// "<span class='pagination-price'>" +
+
+//document.querySelector(".price-caesar span").textContent = " 244";
