@@ -7,12 +7,12 @@
   justify-content: space-between;
   &__button {
     display: block;
-    background: url("../Images/menu-bg2.svg") center center/ 24px 24px no-repeat,
+    background: url("../Images/menu.svg") center center/ 24px 24px no-repeat,
       linear-gradient(127.44deg, #505050 0%, #383838 100%);
     position: relative;
     width: 100%;
     height: 98px;
-
+    transition: all 0.2s ease;
     &::after {
       content: "";
       position: absolute;
@@ -24,17 +24,30 @@
       height: 24px;
       top: calc(50% - 13px);
       left: calc(50% - 13px);
+      opacity: 0.05;
+      transition: all 0.2s ease;
     }
     &::before {
       content: "";
       position: absolute;
-      background: url("../Images/menu.svg") center center/ 24px 24px no-repeat;
+      background: url("../Images/menu-bg2.svg") center center/ 24px 24px
+        no-repeat;
       display: block;
       width: 24px;
       background-size: cover;
       height: 24px;
       top: calc(50% - 11px);
       left: calc(50% - 11px);
+      opacity: 0.05;
+      transition: all 0.2s ease;
+    }
+    &:hover {
+      background: url("../Images/menu.svg") center center/ 24px 24px no-repeat,
+        linear-gradient(127.44deg, #6565658f 0%, #55555586 100%);
+    }
+    &:hover::before,
+    &:hover::after {
+      opacity: 0.8;
     }
   }
   &__list {

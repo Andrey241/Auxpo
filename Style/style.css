@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /*Обнуление*/
 @import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500;600;800&family=Caudex:wght@700&family=Orbitron:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500;600;800&family=Caudex:wght@700&family=Orbitron:wght@700&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -110,6 +111,10 @@ html {
   height: 100vh;
 }
 
+a {
+  cursor: pointer;
+}
+
 .content {
   display: -ms-grid;
   display: grid;
@@ -142,12 +147,15 @@ html {
 
 .content-sidebar__button {
   display: block;
-  background: url("../Images/menu-bg2.svg") center center/24px 24px no-repeat, -webkit-linear-gradient(322.56deg, #505050 0%, #383838 100%);
-  background: url("../Images/menu-bg2.svg") center center/24px 24px no-repeat, -o-linear-gradient(322.56deg, #505050 0%, #383838 100%);
-  background: url("../Images/menu-bg2.svg") center center/24px 24px no-repeat, linear-gradient(127.44deg, #505050 0%, #383838 100%);
+  background: url("../Images/menu.svg") center center/24px 24px no-repeat, -webkit-linear-gradient(322.56deg, #505050 0%, #383838 100%);
+  background: url("../Images/menu.svg") center center/24px 24px no-repeat, -o-linear-gradient(322.56deg, #505050 0%, #383838 100%);
+  background: url("../Images/menu.svg") center center/24px 24px no-repeat, linear-gradient(127.44deg, #505050 0%, #383838 100%);
   position: relative;
   width: 100%;
   height: 98px;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .content-sidebar__button::after {
@@ -160,18 +168,36 @@ html {
   height: 24px;
   top: calc(50% - 13px);
   left: calc(50% - 13px);
+  opacity: 0.05;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .content-sidebar__button::before {
   content: "";
   position: absolute;
-  background: url("../Images/menu.svg") center center/24px 24px no-repeat;
+  background: url("../Images/menu-bg2.svg") center center/24px 24px no-repeat;
   display: block;
   width: 24px;
   background-size: cover;
   height: 24px;
   top: calc(50% - 11px);
   left: calc(50% - 11px);
+  opacity: 0.05;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.content-sidebar__button:hover {
+  background: url("../Images/menu.svg") center center/24px 24px no-repeat, -webkit-linear-gradient(322.56deg, #6565658f 0%, #55555586 100%);
+  background: url("../Images/menu.svg") center center/24px 24px no-repeat, -o-linear-gradient(322.56deg, #6565658f 0%, #55555586 100%);
+  background: url("../Images/menu.svg") center center/24px 24px no-repeat, linear-gradient(127.44deg, #6565658f 0%, #55555586 100%);
+}
+
+.content-sidebar__button:hover::before, .content-sidebar__button:hover::after {
+  opacity: 0.8;
 }
 
 .content-sidebar__list {
@@ -219,4 +245,79 @@ html {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1 / 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 59px;
+}
+
+.content-header__logo {
+  background: url("../Images/logo.svg") center center/cover no-repeat;
+  background-size: 102px 30px;
+  display: block;
+  width: 102px;
+  height: 30px;
+}
+
+.content-header__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content-header__item:not(:first-child) {
+  margin-left: 67px;
+}
+
+.content-header__link {
+  white-space: nowrap;
+  display: inline-block;
+  color: #fff;
+  font-family: "Catamaran", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  -webkit-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  position: relative;
+}
+
+.content-header__link::after {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  display: block;
+  height: 2px;
+  width: 22px;
+  bottom: -14px;
+  left: 0;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.content-header__link.active {
+  font-weight: 800;
+}
+
+.content-header__link.active::after, .content-header__link:hover::after {
+  opacity: 1;
+}
+
+.content-header__link.wallet {
+  background: url("../Images/wallet.svg") center center/cover no-repeat;
+  background-size: 24px 24px;
+  display: block;
+  width: 24px;
+  height: 24px;
 }

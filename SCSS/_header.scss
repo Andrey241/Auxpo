@@ -1,4 +1,63 @@
 .content-header {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 59px;
+
+  &__logo {
+    background: url("../Images/logo.svg") center center/cover no-repeat;
+    background-size: 102px 30px;
+    display: block;
+    width: 102px;
+    height: 30px;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item:not(:first-child) {
+    margin-left: 67px;
+  }
+
+  &__link {
+    white-space: nowrap;
+    display: inline-block;
+    color: #fff;
+    font-family: $Catamaran;
+    font-size: 17px;
+    font-weight: 400;
+    transition: all 0.3s ease-in;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: #fff;
+      display: block;
+      height: 2px;
+      width: 22px;
+      bottom: -14px;
+      left: 0;
+      opacity: 0;
+      transition: all 0.3s ease-in;
+    }
+    &.active {
+      font-weight: 800;
+    }
+    &.active::after,
+    &:hover::after {
+      opacity: 1;
+    }
+  }
+  &__link.wallet {
+    background: url("../Images/wallet.svg") center center/cover no-repeat;
+    background-size: 24px 24px;
+    display: block;
+    width: 24px;
+    height: 24px;
+  }
 }
