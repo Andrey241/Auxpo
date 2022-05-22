@@ -1,0 +1,139 @@
+// @media (max-height: 430px) {
+//   .content {
+//     grid-template-rows: minmax(min-content, 98px) 1fr;
+//   }
+//   .content-sidebar {
+//     justify-content: normal;
+//     &__list {
+//       text-align: end;
+//       display: flex;
+//       flex-direction: column;
+//       height: 100%;
+//       justify-content: space-around;
+//       margin: 10px auto;
+//     }
+//     &__item {
+//       margin-bottom: 10px !important;
+//     }
+//   }
+// }
+@media (max-height: 900px) {
+  .swiper-footer {
+    height: 180px;
+  }
+  .swiper-cover {
+    width: 180px;
+    height: 180px;
+    &__img {
+      width: 180px;
+      height: 180px;
+    }
+  }
+}
+@media (max-height: 750px) {
+  .swiper-slide {
+    &__img {
+      width: auto;
+      height: 100vh;
+      left: 15%;
+    }
+  }
+  .swiper-info {
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(6, 1fr);
+    &__item {
+      margin: 0;
+      grid-row: 2/1;
+      justify-content: center;
+      flex-direction: column;
+      display: flex;
+    }
+    &__author {
+      margin: 0;
+      grid-column: 1/2;
+    }
+  }
+  .swiper-footer {
+    height: 15vh;
+  }
+  .swiper-cover {
+    width: 15vh;
+    height: 15vh;
+    &__img {
+      width: 15vh;
+      height: 15vh;
+    }
+  }
+}
+
+@media (max-height: 430px) {
+  .content-sidebar {
+    &__item {
+      margin: 30px 0 30px;
+    }
+  }
+}
+
+@media (max-height: 300px) {
+  .content {
+    grid-template-columns: 50px 1fr;
+    grid-template-rows: 50px 1fr;
+  }
+  .content-header {
+    &__logo {
+      width: 97px;
+      height: 24px;
+    }
+    & a {
+      font-size: 15px;
+      &::after {
+        margin-bottom: 4px;
+      }
+    }
+  }
+  .content-sidebar {
+    &__button {
+      height: 50px;
+    }
+
+    &__item {
+      margin: 30px 0 30px;
+    }
+  }
+}
+
+@media (max-height: 750px) and (min-width: 1350px) {
+  .swiper-info {
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(6, 1fr);
+    &__item {
+      margin: 0;
+      grid-row: 1/2;
+      justify-content: center;
+      flex-direction: column;
+      display: flex;
+      font-size: 90%;
+    }
+    &__author {
+      margin: 0;
+      grid-row: 1/2;
+      justify-content: center;
+      flex-direction: column;
+      display: flex;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .swiper-cover,
+  .swiper-cover__img {
+    width: 18vh;
+    height: 18vh;
+  }
+  .swiper-info {
+    flex-basis: calc(100% - 18vh);
+  }
+  .swiper-footer {
+    gap: 8%;
+  }
+}

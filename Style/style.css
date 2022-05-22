@@ -251,6 +251,18 @@ a {
   position: static;
 }
 
+.swiper-slide {
+  position: relative;
+}
+
+.swiper-slide__img {
+  position: absolute;
+  top: 1%;
+  left: 15%;
+  width: 40%;
+  bottom: 0;
+}
+
 .swiper-pagination-vertical.swiper-pagination-bullets,
 .swiper-vertical > .swiper-pagination-bullets {
   right: inherit;
@@ -275,7 +287,8 @@ a {
 }
 
 .swiper-pagination-bullet:not(:last-child) {
-  margin-bottom: 23px !important;
+  margin-top: 0 !important;
+  margin-bottom: 15px !important;
 }
 
 .swiper-pagination-bullet span {
@@ -501,7 +514,7 @@ a {
   font-family: "Caudex", serif;
   font-size: 22px;
   font-weight: 700;
-  margin: 41px 0 26px;
+  margin: 30px 0 26px;
 }
 
 .swiper-info__item {
@@ -547,7 +560,7 @@ a {
 }
 
 .pagination-price span {
-  font-family: "Orbitron", sans-serif;
+  font-family: "Caudex", serif;
   display: inline;
 }
 
@@ -633,4 +646,153 @@ a {
   display: block;
   width: 24px;
   height: 24px;
+}
+
+@media (max-height: 900px) {
+  .swiper-footer {
+    height: 180px;
+  }
+  .swiper-cover {
+    width: 180px;
+    height: 180px;
+  }
+  .swiper-cover__img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (max-height: 750px) {
+  .swiper-slide__img {
+    width: auto;
+    height: 100vh;
+    left: 15%;
+  }
+  .swiper-info {
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+    -ms-grid-columns: (1fr)[6];
+        grid-template-columns: repeat(6, 1fr);
+  }
+  .swiper-info__item {
+    margin: 0;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: -1;
+    grid-row: 2/1;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .swiper-info__author {
+    margin: 0;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+  }
+  .swiper-footer {
+    height: 15vh;
+  }
+  .swiper-cover {
+    width: 15vh;
+    height: 15vh;
+  }
+  .swiper-cover__img {
+    width: 15vh;
+    height: 15vh;
+  }
+}
+
+@media (max-height: 430px) {
+  .content-sidebar__item {
+    margin: 30px 0 30px;
+  }
+}
+
+@media (max-height: 300px) {
+  .content {
+    -ms-grid-columns: 50px 1fr;
+        grid-template-columns: 50px 1fr;
+    -ms-grid-rows: 50px 1fr;
+        grid-template-rows: 50px 1fr;
+  }
+  .content-header__logo {
+    width: 97px;
+    height: 24px;
+  }
+  .content-header a {
+    font-size: 15px;
+  }
+  .content-header a::after {
+    margin-bottom: 4px;
+  }
+  .content-sidebar__button {
+    height: 50px;
+  }
+  .content-sidebar__item {
+    margin: 30px 0 30px;
+  }
+}
+
+@media (max-height: 750px) and (min-width: 1350px) {
+  .swiper-info {
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+    -ms-grid-columns: (1fr)[6];
+        grid-template-columns: repeat(6, 1fr);
+  }
+  .swiper-info__item {
+    margin: 0;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 90%;
+  }
+  .swiper-info__author {
+    margin: 0;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (max-width: 1200px) {
+  .swiper-cover,
+  .swiper-cover__img {
+    width: 18vh;
+    height: 18vh;
+  }
+  .swiper-info {
+    -ms-flex-preferred-size: calc(100% - 18vh);
+        flex-basis: calc(100% - 18vh);
+  }
+  .swiper-footer {
+    gap: 8%;
+  }
 }
