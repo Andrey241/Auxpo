@@ -33,6 +33,7 @@ if (viewport_Height < 600 || viewport_Width < 600) {
     slidesPerView: 1,
     spaceBetween: 30,
     mousewheel: false,
+    allowTouchMove: false,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
