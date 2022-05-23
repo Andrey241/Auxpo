@@ -649,7 +649,7 @@ a {
   height: 24px;
 }
 
-@media (orientation: portrait) and (max-width: 376px) and (max-height: 668px) {
+@media (orientation: portrait) and (max-width: 415px) and (max-height: 920px) {
   html,
   body {
     overflow-y: scroll;
@@ -694,7 +694,7 @@ a {
   }
   .swiper-body {
     margin-left: 0;
-    margin-top: 200px;
+    margin-top: 80px;
   }
   .swiper-body__title {
     font-size: 38px;
@@ -718,6 +718,7 @@ a {
   .swiper-slide {
     overflow-y: scroll;
     height: 100%;
+    width: 315px;
   }
   .swiper-footer {
     display: -ms-grid;
@@ -725,6 +726,8 @@ a {
     position: relative;
     -ms-grid-rows: (1fr)[1];
         grid-template-rows: repeat(1, 1fr);
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
     height: 161%;
   }
   .swiper-info {
@@ -733,6 +736,12 @@ a {
         grid-template-rows: repeat(6, 1fr);
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
+    padding-left: 0;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+    width: 100%;
+    text-align: center;
   }
   .swiper-info__author {
     -ms-grid-column: 1;
@@ -746,20 +755,26 @@ a {
     grid-row: inherit;
   }
   .swiper-slide__img {
-    top: 3%;
-    left: calc(50% - 62px);
+    margin: 0 auto;
+    display: block;
+    position: static;
+    width: 80%;
   }
   .swiper-cover {
     margin: 0 auto;
     -ms-grid-row: 2;
     -ms-grid-row-span: 1;
     grid-row: 2/3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
   }
   .swiper-pagination-vertical.swiper-pagination-bullets,
   .swiper-vertical > .swiper-pagination-bullets {
     position: static;
     display: block;
     margin: 0 auto;
+    margin-top: 100px;
   }
   .pagination-art::before,
   .swiper-pagination-bullet span::before,
