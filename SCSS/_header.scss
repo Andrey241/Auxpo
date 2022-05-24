@@ -4,7 +4,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 59px;
 
   &__logo {
     background: url("../Images/logo.svg") center center/cover no-repeat;
@@ -12,6 +11,7 @@
     display: block;
     width: 102px;
     height: 30px;
+    margin-left: 59px;
   }
 
   &__list {
@@ -54,6 +54,7 @@
     }
   }
   &__link.wallet {
+    margin-right: 40px;
     background: url("../Images/wallet.svg") center center/cover no-repeat;
     background-size: 24px 24px;
     display: block;

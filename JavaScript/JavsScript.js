@@ -5,7 +5,7 @@ function start() {
     document.getElementById("Button").removeAttribute("disabled");
     console.log(document.getElementById("Button"));
   }
-  if (viewport_Width <= 542 && viewport_Height <= 920) {
+  if (viewport_Width <= 700 && viewport_Height <= 1400) {
     console.log(1);
 
     const footers = document.querySelectorAll(".swiper-footer");
@@ -15,7 +15,7 @@ function start() {
     }
     const slideWidth = document.querySelectorAll(".swiper-slide");
     slideWidth.forEach((item) => {
-      item.style.width = `${viewport_Width - 45}px`;
+      item.style.width = `${viewport_Width + 5}px`;
     });
   } else if (viewport_Width <= 920 && viewport_Height <= 542) {
     const footers = document.querySelectorAll(".swiper-footer");
@@ -23,6 +23,17 @@ function start() {
     for (let i = 0; i < footers.length; i++) {
       swiperBodys[i].append(footers[i]);
     }
+  } else if (viewport_Width >= 920 && viewport_Height < 542) {
+    const footers = document.querySelectorAll(".swiper-footer");
+    const swiperBodys = document.querySelectorAll(".swiper-body");
+    for (let i = 0; i < footers.length; i++) {
+      swiperBodys[i].append(footers[i]);
+    }
+    const slideWidth = document.querySelectorAll(".swiper-slide");
+    slideWidth.forEach((item) => {
+      item.style.width = `${viewport_Width + 5}px`;
+    });
+  } else {
     const slideWidth = document.querySelectorAll(".swiper-slide");
     slideWidth.forEach((item) => {
       item.style.width = `${viewport_Width - 45}px`;
@@ -31,6 +42,8 @@ function start() {
 }
 start();
 window.addEventListener("resize", start);
+window.addEventListener("onresize", start);
+window.addEventListener("mouseenter", start);
 
 const burger = document.querySelector(".content-sidebar__button");
 burger.addEventListener("click", function () {
