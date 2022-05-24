@@ -6,8 +6,6 @@ function start() {
     console.log(document.getElementById("Button"));
   }
   if (viewport_Width <= 700 && viewport_Height <= 1400) {
-    console.log(1);
-
     const footers = document.querySelectorAll(".swiper-footer");
     const swiperBodys = document.querySelectorAll(".swiper-body");
     for (let i = 0; i < footers.length; i++) {
@@ -17,13 +15,13 @@ function start() {
     slideWidth.forEach((item) => {
       item.style.width = `${viewport_Width + 5}px`;
     });
-  } else if (viewport_Width <= 920 && viewport_Height <= 542) {
+  } else if (viewport_Width <= 920 && viewport_Height <= 556) {
     const footers = document.querySelectorAll(".swiper-footer");
     const swiperBodys = document.querySelectorAll(".swiper-body");
     for (let i = 0; i < footers.length; i++) {
       swiperBodys[i].append(footers[i]);
     }
-  } else if (viewport_Width >= 920 && viewport_Height < 542) {
+  } else if (viewport_Width >= 920 && viewport_Height < 556) {
     const footers = document.querySelectorAll(".swiper-footer");
     const swiperBodys = document.querySelectorAll(".swiper-body");
     for (let i = 0; i < footers.length; i++) {
@@ -39,6 +37,12 @@ function start() {
       item.style.width = `${viewport_Width - 45}px`;
     });
   }
+  if (viewport_Width < 1200) {
+    const slideWidth = document.querySelectorAll(".swiper-slide");
+    slideWidth.forEach((item) => {
+      item.style.width = `${viewport_Width}px`;
+    });
+  }
 }
 start();
 window.addEventListener("resize", start);
@@ -50,3 +54,9 @@ burger.addEventListener("click", function () {
   document.querySelector("nav").classList.toggle("active");
   body.classList.toggle("lock");
 });
+
+// alert(viewport_Height);
+// alert(viewport_Width);
+
+//597
+//1183

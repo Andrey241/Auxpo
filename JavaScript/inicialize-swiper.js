@@ -23,7 +23,7 @@ const viewport_Width = Math.max(document.documentElement.clientWidth);
 // alert(viewport_Width);
 // alert(viewport_Height);
 
-if (viewport_Height < 600 || viewport_Width < 600) {
+if (viewport_Height < 620 || viewport_Width < 557) {
   var swiper = new Swiper(".main-swiper", {
     effect: "fade",
     fadeEffect: {
@@ -64,7 +64,7 @@ if (viewport_Height < 600 || viewport_Width < 600) {
     direction: "vertical",
     slidesPerView: 1,
     spaceBetween: 30,
-    mousewheel: true,
+    mousewheel: false,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -88,3 +88,36 @@ if (viewport_Height < 600 || viewport_Width < 600) {
     },
   });
 }
+// else if (viewport_Height > 556 && viewport_Height < 900) {
+//   var swiper = new Swiper(".main-swiper", {
+//     effect: "fade",
+//     fadeEffect: {
+//       crossFade: true,
+//     },
+//     direction: "vertical",
+//     slidesPerView: 1,
+//     spaceBetween: 30,
+//     mousewheel: false,
+//     pagination: {
+//       el: ".swiper-pagination",
+//       clickable: true,
+//       renderBullet: function (index, className) {
+//         return (
+//           '<p class="' +
+//           className +
+//           '">' +
+//           "#0" +
+//           count[index] +
+//           "<span class='pagination-art'>" +
+//           art[index] +
+//           "</span>" +
+//           "<span class='pagination-price'>" +
+//           // `<span class='pagination-price ${classForPirce[index]}'>` +
+//           ("<span>" + price[index] + "</span>" + " " + "ETH") +
+//           "</span>" +
+//           "</p>"
+//         );
+//       },
+//     },
+//   });
+// }
