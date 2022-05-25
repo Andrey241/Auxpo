@@ -454,7 +454,7 @@
     position: relative;
     grid-template-rows: repeat(1, 1fr);
     grid-template-columns: 1fr 1fr 1fr;
-    height: 600%;
+    height: 100%;
   }
   .swiper-info {
     display: inherit;
@@ -477,6 +477,8 @@
     display: block;
     position: static;
     width: 80%;
+    object-fit: contain;
+    height: 40%;
   }
   .swiper-cover {
     margin: 0 auto;

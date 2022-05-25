@@ -64,6 +64,7 @@ if (viewport_Height < 620 || viewport_Width < 557) {
     direction: "vertical",
     slidesPerView: 1,
     spaceBetween: 30,
+    allowTouchMove: false,
     mousewheel: false,
     pagination: {
       el: ".swiper-pagination",
